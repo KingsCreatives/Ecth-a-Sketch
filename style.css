@@ -5,11 +5,27 @@
 }
 
 main {
-    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.color {
+    margin-right: 50px;
 }
 
 .grid-wrapper {
+    top: 30px;
+    font-size: 0;
     width: 480px;
     height: 480px;
-    outline: 2px soild bisque;
+    outline: 2px solid #000;
+}
+
+.grid {
+    display: inline-block;
+    outline: 1px solid #000;
+    margin: 0;
+    padding: 0;
 }
