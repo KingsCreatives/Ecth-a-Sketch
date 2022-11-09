@@ -8,17 +8,24 @@
     <title>Ecth A Sketch</title>
 </head>
 
-<body>
+<body onload="createGrid(12)">
+
+    <header>
+        <h1>Etch a Sketch</h1>
+        <button id="new-grid">New Grid</button>
+    </header>
 
     <main>
-        <div class="color">
-            <input type="color">
+        <div class="color-options">
+            <input type="color" name="color" id="color-selector">
+            <button class="random-color">Random Color</button>
+            <button class="clear-btn">Clear</button>
         </div>
         <div class="grid-wrapper" id="wrapper">
 
         </div>
     </main>
-     
+
 
 
     <script src="./app.js"></script>
