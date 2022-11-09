@@ -1,9 +1,10 @@
 const wrapper = document.querySelector('.grid-wrapper');
 const gridDiv = document.getElementsByClassName('grid');
 const newGridBtn = document.querySelector('#new-grid');
-const randomColor = document.querySelector('.random-color');
+let randomColor = document.querySelector('.random-color');
 const clearBtn = document.querySelector('.clear-btn');
-const colorSelector = document.querySelector('#color-selector');
+let colorSelector = document.getElementById("color-selector");
+
 
 // Create 12 x 12 grid by default
 function createGrid(num = 12) {
@@ -23,7 +24,17 @@ function createGrid(num = 12) {
     }
 }
 
+
+
+
 // clear window
 clearBtn.addEventListener('click', function() {
     window.location.reload();
 });
+
+
+
+// Event Listeners
+window.onload = function() {
+    createGrid(12);
+}
