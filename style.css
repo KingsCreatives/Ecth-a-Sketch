@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main {
+    text-align: center;
+}
+
+.grid-wrapper {
+    width: 480px;
+    height: 480px;
+    outline: 2px soild bisque;
+}
