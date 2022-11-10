@@ -12,21 +12,34 @@
 
     <header>
         <h1>Etch a Sketch</h1>
-        <button id="new-grid">New Grid</button>
+
+        <div class="grid-form">
+            <p>New grid:</p><input type="text" class="grid-num">
+            <p class="copy-num"></p>
+            <button class="create-grid">Confirm</button>
+        </div>
+        <p class="prompt"></p>
     </header>
 
     <main>
         <div class="color-options">
-            <input type="color" name="color" id="color-selector">
-            <label for="color">Choose color</label>
-
-            <button class="random-color">Random Color</button>
+            <form class="colors">
+                <input type="radio" name="pen" value="red"> <label for="red">Red</label>
+                <input type="radio" name="pen" value="black"> <label for="black">Black</label>
+                <input type="radio" name="pen" value="random"> <label for="rainbow">Rainbow</label>
+                <input type="radio" name="pen" value="eraser"> <label for="eraser">Eraser</label>
+            </form>
             <button class="clear-btn">Clear</button>
         </div>
-        <div class="grid-wrapper" id="wrapper">
+        <div class="canvas">
+            <div class="grid-wrapper" id="wrapper">
 
+            </div>
         </div>
     </main>
+    <footer>
+        <p> @ 2022 Kwame Cody | All right reserved</p>
+    </footer>
 
 
 
