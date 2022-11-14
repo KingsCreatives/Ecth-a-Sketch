@@ -23,17 +23,23 @@
 
     <main>
         <div class="color-options">
-            <form class="colors">
-                <input type="radio" name="pen" value="red"> <label for="red">Red</label>
-                <input type="radio" name="pen" value="black"> <label for="black">Black</label>
-                <input type="radio" name="pen" value="random"> <label for="rainbow">Rainbow</label>
-                <input type="radio" name="pen" value="eraser"> <label for="eraser">Eraser</label>
-            </form>
-            <button class="clear-btn">Clear</button>
+            <button id="select-color" type="button">Color: <input type="color" value="#ff0000" id="select-color"></button>
+            <button class="random-color" data-color="rainbow" type="button">Rainbow</button>
+            <button class="eraser" type="button">Eraser</button>
+            <button class="clear-btn" type="button">Clear</button>
         </div>
+
         <div class="canvas">
             <div class="grid-wrapper" id="wrapper">
 
+            </div>
+        </div>
+
+        <div class="grid-options">
+            <div class="size-container">
+
+                <p>Pixel Size</p>
+                <input type="range" min="4" max="50" value="15" id="sizeRange" class="slider">
             </div>
         </div>
     </main>

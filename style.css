@@ -36,6 +36,10 @@ header h1 {
     margin-bottom: 15px;
 }
 
+.prompt {
+    padding-top: 25px;
+}
+
 .grid-form {
     display: flex;
 }
