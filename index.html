@@ -11,21 +11,13 @@
 <body>
 
     <header>
-        <h1>Etch a Sketch</h1>
-
-        <div class="grid-form">
-            <p>New grid:</p><input type="text" class="grid-num">
-            <p class="copy-num"></p>
-            <button class="create-grid">Confirm</button>
-        </div>
-        <p class="prompt"></p>
+        <h1>Cody Pad</h1>
     </header>
 
     <main>
         <div class="color-options">
-            <button id="select-color" type="button">Color: <input type="color" value="#ff0000" id="select-color"></button>
-            <button class="random-color" data-color="rainbow" type="button">Rainbow</button>
-            <button class="eraser" type="button">Eraser</button>
+            <button class="color" id="select-color" type="button">Color:<input type="color" value="#ff0000" id="color-picker"></button>
+            <button class="color random-color" data-color="rainbow" type="button">Rainbow</button>
             <button class="clear-btn" type="button">Clear</button>
         </div>
 
@@ -37,9 +29,9 @@
 
         <div class="grid-options">
             <div class="size-container">
-
-                <p>Pixel Size</p>
-                <input type="range" min="4" max="50" value="15" id="sizeRange" class="slider">
+                <p class="grid-num"></p>
+                <input type="range" min="4" max="30" value="15" id="sizeRange" class="slider">
+                <p>Smallest to Largest</p>
             </div>
         </div>
     </main>

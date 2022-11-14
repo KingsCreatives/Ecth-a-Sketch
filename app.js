@@ -1,15 +1,12 @@
 //Getting elements on page
 const clearBtn = document.querySelector('.clear-btn');
+const colorPicker = document.querySelector("#color-picker");
 const gridWrapper = document.querySelector(".grid-wrapper");
-let userInput = document.querySelector(".grid-num");
-let createGridBtn = document.querySelector(".create-grid");
-let copyUserInput = document.querySelector(".copy-num");
-let prompt = document.querySelector(".prompt");
+const colorBtns = document.querySelectorAll(".color");
+let color = "black";
 
 
-// Eventlistener for btns
-userInput.addEventListener("focus", getGridNumber);
-userInput.addEventListener("keyup", copyGridNumber)
+
 clearBtn.addEventListener('click', clearGrid);
 //createGridBtn.addEventListener("click", makeGrid);
 
@@ -20,21 +17,7 @@ function clearGrid() {
 }
 
 
-// Duplicate grid number
-function copyGridNumber() {
-    let newGrid = userInput.Value;
-    copyGridNumber.textContent = "X" + newGrid;
-}
-
-// User Grid
-function getGridNumber() {
-    prompt.textContent = "Enter a number between 2 and 30.";
-}
-
-
-
-
-// Create 12 x 12 grid by default
+// Create Grid
 function createGrid(num) {
     for (var rows = 0; rows < num; rows++) {
         for (var columns = 0; columns < num; columns++) {
@@ -45,16 +28,14 @@ function createGrid(num) {
             grid.style.width = parseInt(480) / num + 'px';
             grid.style.height = parseInt(480) / num + 'px';
         };
-        //var grids = gridWrapper.querySelectorAll(".grid");
-        // grids.forEach(grid => grid.addEventListener("mouseover", changeColor));
+        var grids = gridWrapper.querySelectorAll(".grid");
+        grids.forEach(grid => grid.addEventListener("mouseover", colorGrid));
 
     }
 }
 
-// Change grid based on user selection
+// Create grid with user selection
 const slider = document.querySelector(".slider");
-
-console.log(slider.value);
 
 function newGrid() {
     let newGrid = document.querySelectorAll(".grid");
@@ -72,13 +53,40 @@ function colorGrid() {
             this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
             break;
         case 'eraser':
-            this.style.backgroundColor = '#ffffff';
+            this.style.backgroundColor = 'none';
             break;
         default:
             this.style.backgroundColor = color;
             break;
     }
 }
+
+// Updates color variable when a color button is clicked
+function changeColor(event) {
+    switch (event.target.dataset.color) {
+        case 'rainbow':
+            color = 'rainbow';
+            break;
+        case 'eraser':
+            color = 'eraser';
+            break;
+        default:
+            color = 'black';
+            break;
+    }
+}
+
+
+
+function userColor(event) {
+    color = event.target.value;
+}
+
+colorPicker.addEventListener("change", userColor, false);
+colorPicker.addEventListener("input", userColor, false);
+colorBtns.forEach(colorBtn => colorBtn.addEventListener("click", changeColor));
+
+
 
 // Create 10 X 10 grid on pageload
 window.onload = function() {
