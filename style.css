@@ -12,7 +12,6 @@ body {
 
 main {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -24,8 +23,12 @@ header {
     justify-content: center;
 }
 
+button {
+    cursor: pointer;
+}
+
 footer {
-    padding-top: 30px;
+    padding-top: 100px;
     text-align: center;
 }
 
@@ -33,44 +36,51 @@ header h1 {
     margin-top: 50px;
     text-align: center;
     font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.prompt {
-    padding-top: 25px;
-}
-
-.grid-form {
-    display: flex;
-}
-
-.grid-form input {
-    width: 30px;
-    margin-left: 2px;
-    margin-right: 5px;
-}
-
-.grid-form p {
-    margin: 0;
-    padding: 0;
+    margin-bottom: 80px;
 }
 
 .color-options {
-    margin-top: 50px;
+    height: 480px;
+    margin-right: 50px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: center;
-    padding-bottom: 30px;
 }
 
-.color-options input {
-    border-radius: 15%;
-    cursor: pointer;
+.random-color,
+.eraser,
+.clear-btn,
+.color-options p {
+    font-size: 20px;
 }
 
 .clear-btn {
-    padding: 3px;
-    margin-left: 8px;
+    margin-bottom: 20px;
+}
+
+.random-color,
+.eraser,
+.clear-btn {
+    margin-top: 20px;
+}
+
+.size-container,
+.text {
+    text-align: center;
+}
+
+.text {
+    padding-top: 5px;
+}
+
+.grid-num {
+    font-weight: bold;
+}
+
+#color-picker {
+    width: 90px;
+    height: 70px;
+    border: none;
     cursor: pointer;
 }
 
@@ -87,4 +97,9 @@ header h1 {
     outline: 1px solid #000;
     margin: 0;
     padding: 0;
+    cursor: pointer;
+}
+
+.slider {
+    cursor: pointer;
 }

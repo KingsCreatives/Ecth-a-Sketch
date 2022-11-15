@@ -11,14 +11,21 @@
 <body>
 
     <header>
-        <h1>Cody Pad</h1>
+        <h1>Etch-a-Sketch</h1>
     </header>
 
     <main>
         <div class="color-options">
-            <button class="color" id="select-color" type="button">Color:<input type="color" value="#ff0000" id="color-picker"></button>
+            <button class="color" id="select-color" type="button"><input type="color" value="#ff0000" id="color-picker"></button>
+            <p class="text">Choose Color</p>
             <button class="color random-color" data-color="rainbow" type="button">Rainbow</button>
+            <button class="color eraser" data-color="eraser" type="button">Eraser</button>
             <button class="clear-btn" type="button">Clear</button>
+            <div class="size-container">
+                <p class="grid-num"></p>
+                <input type="range" min="4" max="100" value="15" id="sizeRange" class="slider">
+                <p>Grid Number</p>
+            </div>
         </div>
 
         <div class="canvas">
@@ -27,13 +34,6 @@
             </div>
         </div>
 
-        <div class="grid-options">
-            <div class="size-container">
-                <p class="grid-num"></p>
-                <input type="range" min="4" max="30" value="15" id="sizeRange" class="slider">
-                <p>Smallest to Largest</p>
-            </div>
-        </div>
     </main>
     <footer>
         <p> @ 2022 Kwame Cody | All right reserved</p>

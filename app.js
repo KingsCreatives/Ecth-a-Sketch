@@ -3,6 +3,7 @@ const clearBtn = document.querySelector('.clear-btn');
 const colorPicker = document.querySelector("#color-picker");
 const gridWrapper = document.querySelector(".grid-wrapper");
 const colorBtns = document.querySelectorAll(".color");
+const gridText = document.querySelector(".grid-num");
 let color = "black";
 
 
@@ -40,7 +41,9 @@ const slider = document.querySelector(".slider");
 function newGrid() {
     let newGrid = document.querySelectorAll(".grid");
     newGrid.forEach(grid => grid.remove());
-    createGrid(slider.value);
+    const gridNumber = slider.value;
+    gridText.textContent = ` ${gridNumber} x ${gridNumber}`;
+    createGrid(gridNumber);
 }
 
 slider.addEventListener("mouseup", newGrid);
@@ -53,7 +56,7 @@ function colorGrid() {
             this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
             break;
         case 'eraser':
-            this.style.backgroundColor = 'none';
+            this.style.backgroundColor = 'transparent';
             break;
         default:
             this.style.backgroundColor = color;
@@ -90,5 +93,6 @@ colorBtns.forEach(colorBtn => colorBtn.addEventListener("click", changeColor));
 
 // Create 10 X 10 grid on pageload
 window.onload = function() {
+    gridText.textContent = "10 X 10";
     createGrid(10);
 }
